@@ -3,7 +3,21 @@
 {% block title %} Mainpage {% endblock title %}
 
 {% block content %}
-<h1>Click here to predict.</h1>
-<a href="#" class="btn btn-lg btn-secondary fw-bold bg-white text-dark m-3" onclick="showResult()">Predict</a>
-<p id="predictionResult"></p>
+<div class="my-5 mx-5">
+
+    <h1>List of Classification</h1>
+    <div class="d-flex mt-3 justify-content-center">
+        <div>
+            {% for obj in list_obj %}
+            <a href="{% url 'detailpage' obj.id %}" class="text-decoration-none text-white">
+                <div class="card bg-secondary p-3 my-3 text-start">
+                    <h2>{{ obj.name }}</h2>
+                    <p>{{ obj.description }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
 {% endblock content %}

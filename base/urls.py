@@ -19,12 +19,13 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 
-from fastai_image.views import mainpage
+from fastai_image.views import mainpage, detailpage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', mainpage, name='mainpage'),
+    path('detail/<int:pk>/', detailpage, name='detailpage'),
 ]
 
 if settings.DEBUG:

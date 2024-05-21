@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ obj.name }} {% endblock title %}
+
+{% block content %}
+<div class="mt-5">
+    <h1>{{ obj.name }}</h1>
+    <p>{{ obj.description }}</p>    
+
+    <a href="#" class="btn btn-lg btn-secondary fw-bold bg-white text-dark m-3" onclick="showResult()">Predict</a>
+    <p id="predictionResult"></p>
+</div>
+{% endblock content %}
