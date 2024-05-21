@@ -7,7 +7,10 @@
     <h1>{{ obj.name }}</h1>
     <p>{{ obj.description }}</p>    
 
-    <a href="#" class="btn btn-lg btn-secondary fw-bold bg-white text-dark m-3" onclick="showResult()">Predict</a>
-    <p id="predictionResult"></p>
+    <input class="border border-white p-3" type="file" id="imageUpload" class="form-control-file"><br>
+    <a id="predict-btn" href="#" class="btn btn-lg btn-secondary fw-bold bg-white text-dark m-3" onclick="predict()" data-object-id="{{ obj.id }}">Predict</a>
+    <br>
+    <p class="my-3" style="display: none;" id="loading">Loading...</p>
+    <p class="h1 my-5" id="predictionResult"></p>
 </div>
 {% endblock content %}
